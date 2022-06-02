@@ -6,7 +6,7 @@ async function create(data){
     return newItem
 }
 async function find(filter={}) {
-    const foundArr = await item.find({...filter,})
+    const foundArr = await item.find({...filter})
         console.log(foundArr);
     return foundArr
 }

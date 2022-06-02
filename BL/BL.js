@@ -6,7 +6,7 @@ async function oneItem(id) {
     return item
 }
 async function redAllItems(cat) {
-    const list = await IC.find(cat)
+    const list = await IC.find({category: cat})
     console.log(list);
     return list
 }
@@ -15,23 +15,23 @@ async function allCategory() {
     console.log(cat);
     return cat
 }
-function deletingItem(id) {
-    IC.deleatone(id)
+async function deletingItem(id) {
+    return await  IC.deleatone(id)
 }
-function deletingCategory(id) {
-    Cc.deleatone(id)
+async function deletingCategory(id) {
+   return await Cc.deleatone(id)
 }
 async function chanegingItems(data) {
-    IC.changeingItem(data)
+  return await  IC.changeingItem(data)
 }
-async function chanegingCat(data) {
-    Cc.changeingCat(data)
+async function chanegingCat(id,data) {
+  return await  Cc.changeingCat(id,data)
 }
 async function addingToCat(data) {
-    const newCat = {
-        category: data
-    }
-    await Cc.creat(newCat)
+    // const newCat = {
+    //     category:{} data
+    // }
+    await Cc.creat(data)
     return await Cc.find()
 
 }

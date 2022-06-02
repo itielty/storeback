@@ -12,13 +12,14 @@ async function find() {
 }
 
 async function deleatone(id) {
+    console.log(id);
     const updateCategory = await category.findByIdAndUpdate(id, { isActive: false }, { new: true })
     console.log(updateCategory);
     return updateCategory
 }
 
 async function changeingCat(id,newData){
-    const updateCategory = await item.findByIdAndUpdate(id, newData, { new: true })
+    const updateCategory = await category.findByIdAndUpdate(id, newData, { new: true })
     console.log(updateCategory);
     return updateCategory
 }

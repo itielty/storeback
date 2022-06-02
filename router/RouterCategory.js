@@ -9,15 +9,16 @@ function RouterCategory(app) {
     })
 
     app.delete("/catDel/:id", async (req, res) => {
-        const r = await func.deleting(req.query.id)
+        console.log(req.params.id);
+        const r = await func.deletingCategory(req.params.id.trim())
         res.send(r)
     })
     app.post("/newCat",async(req,res)=>{
         const r = await func.addingToCat(req.body)
         res.send(r)
     })
-    app.put("/chanegCat", async(req, res) => {
-        const r = await func.chanegingCat(req.body)
+    app.put("/chanegCat/:id", async(req, res) => {
+        const r = await func.chanegingCat(req.params.id,req.body)
         res.send(r)
 })}
 
